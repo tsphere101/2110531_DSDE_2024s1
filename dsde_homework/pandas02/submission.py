@@ -53,11 +53,14 @@ def Q2(vdo_df):
         - GBvideos.csv has been loaded into memory and is ready to be utilized as vdo_df
         - The duplicate rows of vdo_df have been removed.
     """
-    return select_where(lambda row: row['dislikes']  > row['likes']) (vdo_df.groupby('title').agg({
-        'title' : get_first,
-        'likes':'sum',
-        'dislikes':'sum'
-    })).shape[0]
+    def have_more_dislikes_than_likes(rows):
+        return 1 if (rows['dislikes'] > rows['likes']).sum() > 0 else 0
+    return vdo_df.groupby('title').apply(lambda rows : have_more_dislikes_than_likes(rows)).sum()
+    # select_where(lambda row: row['dislikes']  > row['likes']) (vdo_df.groupby('title').agg({
+    #     'title' : get_first,
+    #     'likes':'sum',
+    #     'dislikes':'sum'
+    # })).shape[0]
     
     
 
@@ -106,6 +109,7 @@ def Q5(vdo_df):
     
     flat = lambda xs : sum(xs,[])
     category_id_of = lambda category : lambda value : next(iter(flat([[key] if category[key] == value else [] for key in category.keys()])), None)
+    int(category_id_of(category)('Sports'))
     
     sports_id = int(category_id_of(category)('Sports'))
     comedy_id = int(category_id_of(category)('Comedy') )
