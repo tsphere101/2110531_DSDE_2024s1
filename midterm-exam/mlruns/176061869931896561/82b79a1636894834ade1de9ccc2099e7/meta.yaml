@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/topfee/pyds/2110531_DSDE_2024s1/midterm-exam/mlruns/176061869931896561/82b79a1636894834ade1de9ccc2099e7/artifacts
+end_time: 1727955849620
+entry_point_name: ''
+experiment_id: '176061869931896561'
+lifecycle_stage: active
+run_id: 82b79a1636894834ade1de9ccc2099e7
+run_name: debonair-eel-275
+run_uuid: 82b79a1636894834ade1de9ccc2099e7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727955848897
+status: 4
+tags: []
+user_id: topfee
