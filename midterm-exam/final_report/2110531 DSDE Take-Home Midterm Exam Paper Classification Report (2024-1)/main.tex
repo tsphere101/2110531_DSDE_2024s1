@@ -1,0 +1,44 @@
+\documentclass[a4paper,12pt]{extreport}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{fontspec}
+\usepackage{xunicode} % Enable line breaks for Thai text
+\usepackage{xltxtra}
+\usepackage{listings}
+\usepackage{float}
+\XeTeXlinebreaklocale "TH"
+\XeTeXlinebreakskip = 0pt plus 2pt minus 1pt
+\setmainfont[
+  Path=Font/,
+  BoldFont={THSarabunNew_Bold.ttf},
+  ItalicFont={THSarabunNew_Italic.ttf},
+  BoldItalicFont={THSarabunNew_BoldItalic.ttf},
+]{THSarabunNew.ttf}
+%% ---- Customizing LaTeX elements to Thai language ---- %%
+\renewcommand{\chaptername}{บทที่}  % Change "Chapter" to "บทที่"
+\renewcommand{\contentsname}{สารบัญ}  % Change "Contents" to "สารบัญ"
+\renewcommand{\indexname}{ดัชนี}      % Change "Index" to "ดัชนี"
+\renewcommand{\figurename}{ภาพที่}    % Change "Figure" to "ภาพที่"
+\newcommand{\imgwidth}{0.6\linewidth}
+
+\title{2110531 Data Science and Data Engineering Take-Home Midterm Exam\\Paper Classification Report (2024/1)}
+\author{Krissada Sarawit\\6770215021}
+\date{October 2024}
+\begin{document}
+\maketitle
+\clearpage
+
+\tableofcontents
+\include{ch-1-Introduction}
+\include{ch-2-DataExploration}
+\include{ch-3-Model}
+\include{ch-4-Result}
+\include{ch-5-Discussion}
+\include{ch-6-Conclusion}
+
+% References 
+\renewcommand{\bibname}{References}
+\bibliographystyle{ieeetr}  
+\bibliography{references} 
+
+\end{document}
