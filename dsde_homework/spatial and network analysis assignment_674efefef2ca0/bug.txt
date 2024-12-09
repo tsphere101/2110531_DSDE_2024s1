@@ -1,0 +1,21 @@
+    layer = pdk.Layer(
+        "ScatterPlotLayer",
+        data=viz_data,
+        get_position=["latitude", "lontitude"],
+        get_radius=50,
+        get_fill_color="color",
+    )
+    view_state = pdk.ViewState(
+        latitude=13.736717,
+        longitude=100.523186,
+        zoom=10,
+        bearing=0,
+        pitch=0,
+    )
+    r = pdk.Deck(
+        map_style=MAP_STYLES[map_style],
+        layers=[layer],
+        initial_view_state=view_state,
+    )
+    st.pydeck_chart(r)
+

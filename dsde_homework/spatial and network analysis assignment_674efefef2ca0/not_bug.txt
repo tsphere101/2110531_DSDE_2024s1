@@ -1,0 +1,24 @@
+    cluster_layer = pdk.Layer(
+        "ScatterplotLayer",
+        data=viz_data,
+        get_position=["longitude", "latitude"],
+        get_radius=50,
+        get_fill_color="color",
+        pickable=True,
+    )
+
+    view_state = pdk.ViewState(
+        latitude=13.736717,
+        longitude=100.523186,
+        zoom=10,
+        bearing=0,
+        pitch=0,
+    )
+
+    r = pdk.Deck(
+        map_style=MAP_STYLES[map_style],
+        layers=[cluster_layer],
+        initial_view_state=view_state,
+    )
+
+    st.pydeck_chart(r)
